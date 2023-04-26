@@ -1,0 +1,80 @@
+{
+	"name": "vs-live-share-mdns",
+	"publisher": "lherman-cs",
+	"displayName": "Live Share MDNS",
+	"description": "Easily Live Share Session Link Without Going Out From IDE",
+	"version": "0.0.11",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lherman-cs/vs-live-share-mdns.git"
+	},
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"keywords": [
+		"sharing",
+		"discovery",
+		"peer",
+		"liveshare",
+		"mdns"
+	],
+	"preview": true,
+	"categories": [
+		"Other"
+	],
+	"extensionDependencies": [
+		"ms-vsliveshare.vsliveshare"
+	],
+	"activationEvents": [
+		"onCommand:extension.liveShareMdns.publish",
+		"onCommand:extension.liveShareMdns.discover"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.liveShareMdns.publish",
+				"title": "Live Share Mdns: Publish"
+			},
+			{
+				"command": "extension.liveShareMdns.discover",
+				"title": "Live Share Mdns: Discover"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"publish": "vsce publish"
+	},
+	"devDependencies": {
+		"@types/bonjour": "^3.5.5",
+		"@types/crypto-js": "^3.1.43",
+		"@types/mdns": "0.0.33",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^11.12.0",
+		"tslint": "^5.14.0",
+		"typescript": "^3.3.4000",
+		"vsce": "^1.64.0",
+		"vscode": "^1.1.33"
+	},
+	"dependencies": {
+		"bonjour": "^3.5.0",
+		"crypto-js": "^3.1.9-1",
+		"random-words": "^1.1.0"
+	},
+	"__metadata": {
+		"id": "d92e1694-0b81-4285-8893-3fe26c8da61b",
+		"publisherId": "3be837e5-dba7-41e8-b3e1-2029e5082dc5",
+		"publisherDisplayName": "lherman-cs",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1679282135466,
+		"preRelease": false
+	}
+}
